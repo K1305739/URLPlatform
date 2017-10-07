@@ -1,0 +1,35 @@
+{
+    "Url": "http://www.bbc.co.uk/iplayer", 
+    "Status_code": 200, 
+    "Date": "Sat, 07 Oct 2017 13:50:52 GMT", 
+    "Content_length": "215661"
+}{
+    "Url": "https://google.com", 
+    "Status_code": 200, 
+    "Date": "Sat, 07 Oct 2017 13:50:53 GMT", 
+    "Content_length": null
+}{
+    "Url": "bad://address", 
+    "Error": "invalid url"
+}{
+    "Url": "http://www.bbc.co.uk/missing/thing", 
+    "Error": "invalid url"
+}{
+    "Url": "http://not.exists.bbc.co.uk/", 
+    "Error": "invalid url"
+}{
+    "Url": "http://www.oracle.com/technetwork/java/javase/downloads/index.html", 
+    "Status_code": 200, 
+    "Date": "Sat, 07 Oct 2017 13:50:53 GMT", 
+    "Content_length": null
+}{
+    "Url": "https://www.pets4homes.co.uk/images/articles/1646/large/kitten-emergencies-signs-to-look-out-for-537479947ec1c.jpg", 
+    "Status_code": 200, 
+    "Date": "Sat, 07 Oct 2017 13:50:54 GMT", 
+    "Content_length": "115828"
+}{
+    "Url": "http://site.mockito.org/", 
+    "Status_code": 200, 
+    "Date": "Sat, 07 Oct 2017 13:50:54 GMT", 
+    "Content_length": "24056"
+}
