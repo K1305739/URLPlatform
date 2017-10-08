@@ -1,0 +1,4 @@
+{
+    "Url": "http://not.exists.bbc.co.uk/", 
+    "Error": "HTTP GET timed out after 10 seconds."
+}

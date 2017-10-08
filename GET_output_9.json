@@ -1,0 +1,4 @@
+{
+    "Url": "httptestCaseDefault.com/", 
+    "Error": "Invalid URL: Address was not prefixed with \"http\" or \"https\"."
+}
