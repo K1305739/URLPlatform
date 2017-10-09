@@ -1,0 +1,7 @@
+www.bbc.co.uk/iplayer
+://www.google.com
+bad://address
+bbc.co.uk
+httpt://www.bbc.co.uk/iplayer
+htp://www.oracle.com/technetwork/java/javase/downloads/index.html
+https://www.pets4homes.co.uk

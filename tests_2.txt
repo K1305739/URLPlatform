@@ -1,0 +1,7 @@
+http://www.testCaseDefault.com/
+http://www.testCaseDefault<.com/
+http://www.testCaseDefault#.com/
+http://www.testCaseDefault%.com/
+http://www.bbc.co.uk/iplayer
+https://google.com
+bad://address

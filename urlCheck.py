@@ -15,28 +15,28 @@ for line in getInput:
 print 'Addresses found:'
 print list
 input.close()
-output_code = 'status_code_output.json'
+output_code = './output/STATUS_output.json'
 status_file = open(output_code,'w')
 code_arr = []
 enum = 0;
 
 for item in list:
-	output = 'GET_output_'+str(enum)+'.json'
+	output = './output/GET_output_'+str(enum)+'.json'
 	out_file = open(output,'w')
 	x = item.split('://')
 	charCheck = urlparse.urlparse(item)
 
-	if x[0]!='http' and x[0]!='https':
+	if x[0]!='http' and x[0]!='https': #Start with check for 'obviously' incorrect addresses that are not appended with 'http' or 'https'
 		sys.stderr.write("ERROR: Web address "+item+" timed out after 10 seconds.\n")
 		json_dict = {
 						'Url': item,
 						'Error': 'Invalid URL: Address was not prefixed with \"http\" or \"https\".'
 					}
-	elif bool(charCheck.scheme)==False:
-		sys.stderr.write("ERROR: Web address "+item+" contains character invalid for a URL.\n")
+	elif bool(charCheck.scheme)==False: #Parse the URL to identify addresses with incorrect characters or format
+		sys.stderr.write("ERROR: Web address "+item+" contains characters or a format invalid for a URL.\n")
 		json_dict = {
 						'Url': item,
-						'Error': 'Invalid URL: Address contains invalid characters.'
+						'Error': 'Invalid URL: Address invalid.'
 					}
 	else:
 		try:
@@ -73,10 +73,10 @@ for item in list:
 	print json_dict
 	json.dump(json_dict,out_file,indent=4)
 	enum=enum+1
-	print "\nAddress data saved in JSON document "+output+".\n"	
+	print "\nAddress data saved in JSON document: "+output+".\n"	
 	out_file.close()
 
 print code_arr
 json.dump(code_arr,status_file,indent=4)
-print "\nStatus Code count saved in JSON document "+output_code+".\n"	
+print "\nStatus Code count saved in JSON document: "+output_code+".\n"
 status_file.close()
