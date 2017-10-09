@@ -4,7 +4,10 @@ import json
 import sys
 import os
 
-filename = raw_input("\nPlease type the file name of your list of web addresses (must be in this script's directory):\n")
+if not os.path.exists('./output'): #If an output folder doesn't currently exist, create
+	os.makedirs('./output')
+
+filename = raw_input("\nPlease type the file name of your list of web addresses, eg. test_0.txt (must be in this script's directory):\n")
 input = open(os.path.join(sys.path[0], filename));
 getInput = input.read().splitlines()
 list = []
@@ -40,7 +43,7 @@ for item in list:
 					}
 	else:
 		try:
-			getUrl = urllib2.urlopen(item, timeout = 10)
+			getUrl = urllib2.urlopen(item, timeout = 10) #Attempt HTTP Get, with timeout of 10 seconds
 		except:
 			sys.stderr.write("ERROR: Web address "+item+" timed out after 10 seconds.\n")
 			json_dict = {
@@ -54,7 +57,7 @@ for item in list:
 							'Content_length': getUrl.headers.get('content-length'),
 							'Date': getUrl.headers.get('date')
 						}
-			#ADDITIONAL REQUIREMENT
+			#ADDITIONAL REQUIREMENT - Status code count
 			#########
 			if not code_arr:
 				code_arr.append({'Status_code': getUrl.getcode(),'Number_of_responses': 1})
